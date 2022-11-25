@@ -1,0 +1,17 @@
+@using Umbraco.Cms.Core.Models.Blocks
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem<CardBlock>>
+@{
+    var mediumSize = Model.ColumnSpan == 6;
+    var image = Model.Content.Image;
+    if (image == null)
+    {
+        return;
+    }
+}
+<div class="card @(mediumSize ? "--medium" : "")">
+    <img src="@(image.GetCropUrl(width: 500))" />
+    <div class="card-content">
+        <h4>@Model.Content.Headline</h4>
+        <div>@Model.Content.Text</div>
+    </div>
+</div>

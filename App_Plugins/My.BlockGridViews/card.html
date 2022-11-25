@@ -1,0 +1,16 @@
+<style>
+/* custom styles for backoffice editing */
+.card {
+    cursor: pointer;
+}
+</style>
+
+<div class="card"
+     ng-click="block.edit()"
+     ng-class="{'--medium': block.layout.columnSpan === 6}">
+    <img ng-if="block.data.image" ng-src="{{(block.data.image[0].mediaKey | mediaItemResolver).mediaLink + '?width=500'}}"/>
+    <div class="card-content">
+        <h4>{{block.data.headline}}</h4>
+        <div ng-bind-html="block.data.text"></div>
+    </div>
+</div>

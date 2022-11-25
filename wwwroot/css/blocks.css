@@ -1,0 +1,152 @@
+/**************** Block styles ****************/
+/* note: these styles are used both for backend editing and for frontend rendering */
+
+/*** Section block ***/
+
+section {
+    padding: 10px 0;
+}
+.areas {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.inverted {
+    color: white;
+    --text-color: white;
+}
+
+/*** Text block ***/
+
+.text {
+    columns: calc(var(--umb-block-grid--item-column-span)/6);
+    margin: 5px;
+}
+
+.text p {
+    margin-block-start: 0;
+}
+
+/*** Quote block ***/
+
+blockquote {
+    font-size: 21px;
+    letter-spacing: -.02rem;
+    margin: 1.5rem 0;
+    padding: 0 3rem;
+    font-style: italic;
+    font-weight: 200;
+}
+blockquote:before {
+    color: var(--text-color, #686e5b);
+    content: '“';
+    font-size: 3em;
+    line-height: 0.0em;
+    margin-right: 0.01em;
+    vertical-align: -0.3em;
+}
+
+/*** Image block ***/
+
+.image img {
+    object-fit: cover;
+    width: 100%;
+    height: calc(30vh * var(--umb-block-grid--item-row-span));
+}
+
+/*** Call to action block ***/
+
+.call-to-action {
+    background-color: #69715e;
+    border: 1px solid white;
+    display: inline-block;
+    padding: 14px 28px;
+    color: white;
+    margin: 5px;
+    margin-right: auto;
+}
+
+/*** Card block ***/
+
+.card {
+    background-color: white;
+    height: 100%;
+    min-height: 30vh;
+    margin: 5px;
+}
+.card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+.card .card-content {
+    padding: 10px;
+}
+.card h4 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+.card p {
+    margin: 0;
+}
+
+.card.--medium {
+    position: relative;
+}
+.card.--medium img {
+    position: absolute;
+    height: 100%;
+}
+.card.--medium::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,.1);
+    pointer-events: none;
+}
+.card.--medium .card-content {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    z-index: 1;
+}
+
+/*** Hero block ***/
+
+.hero {
+    object-fit: cover;
+    width: 100%;
+    height: 40vh;
+}
+.hero-background {
+    position: absolute;
+    inset: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.hero-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,.1);
+    pointer-events: none;
+}
+.hero .hero-content {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero .hero-content {
+    color: white;
+}
+.hero .hero-content > h1 {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1;
+    margin:0;
+    margin-bottom: 20px;
+    padding: 120px 0 20px 0;
+}
+

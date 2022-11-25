@@ -1,0 +1,20 @@
+<style>
+/* custom styles for backoffice editing */
+.hero {
+    cursor: pointer;
+    /* these CSS variables change the color of the "add content" button for the block area */
+    --umb-block-grid--text-color: #fff;
+    --umb-block-grid--text-color-hover: #9fbfff;
+}
+</style>
+
+<div class="hero" ng-click="block.edit()">
+    <div class="hero-background"
+         ng-style="{'background-image': 'url('+((block.data.backgroundImage[0].mediaKey | mediaItemResolver).mediaLink)+'?width=500)'}">
+    </div>
+    <div class="hero-content">
+        <h1>{{block.data.headline}}</h1>
+        <!-- this renders the block areas within the section -->
+        <umb-block-grid-render-area-slots ng-click="$event.stopPropagation()"></umb-block-grid-render-area-slots>
+    </div>
+</div>

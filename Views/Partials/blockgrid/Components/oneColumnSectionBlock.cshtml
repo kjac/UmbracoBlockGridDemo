@@ -1,0 +1,13 @@
+@using Umbraco.Cms.Core.Models.Blocks
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem<OneColumnSectionBlock>>
+@{
+    var backgroundColor = Model.Content.BackgroundColor;
+    var inverted = "inverted".Equals(Model.Content.TextContrast);
+}
+<section
+    style="background-color: #@backgroundColor"
+    class="@(inverted ? "inverted" : null)">
+    <div class="areas">
+    @(await Html.GetBlockGridItemAreasHtmlAsync(Model))
+    </div>
+</section>

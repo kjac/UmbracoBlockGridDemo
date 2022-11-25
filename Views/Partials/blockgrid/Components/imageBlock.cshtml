@@ -1,0 +1,12 @@
+@using Umbraco.Cms.Core.Models.Blocks
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem<ImageBlock>>
+@{
+    var image = Model.Content.Image;
+    if (image == null)
+    {
+        return;
+    }
+}
+<div class="image">
+    <img src="@(image.GetCropUrl(width: 500))" />
+</div>

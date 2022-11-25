@@ -1,0 +1,10 @@
+<style>
+/* custom styles for backoffice editing */
+.image {
+    cursor: pointer;
+}
+</style>
+
+<div class="image" ng-click="block.edit()">
+    <img ng-if="block.data.image" ng-src="{{(block.data.image[0].mediaKey | mediaItemResolver).mediaLink + '?width=500'}}"/>
+</div>

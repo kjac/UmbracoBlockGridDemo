@@ -1,0 +1,12 @@
+<section 
+	ng-style="{
+        'background-color': '#' + block.data.backgroundColor.value
+    }"
+	ng-class="{
+		'inverted': block.data.textContrast === 'inverted'
+	}">
+	<div class="areas">
+		<!-- this renders the block areas within the section -->
+		<umb-block-grid-render-area-slots></umb-block-grid-render-area-slots>
+	</div>
+</section>
